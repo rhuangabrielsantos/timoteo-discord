@@ -1,4 +1,5 @@
-import { Command } from "../Interfaces";
+import MessageHelper from "../Helpers/MessageHelpers";
+import { Command, Message } from "../Interfaces";
 import JokeRepository from "../Repositories/JokeRepository";
 
 export const command: Command = {
@@ -9,6 +10,16 @@ export const command: Command = {
     const jokes = await new JokeRepository().getAll();
     const joke = jokes[Math.floor(Math.random() * jokes.length)];
 
-    await message.channel.send(joke.text);
+    const messageArguments = {
+      title: joke.text,
+      description: "Uma piada para alegrar seu dia!",
+      color: "WHITE",
+    } as Message;
+
+    const embedMessage = new MessageHelper().createEmbedMessage(
+      messageArguments
+    );
+
+    message.channel.send({ embeds: [embedMessage] });
   },
 };
