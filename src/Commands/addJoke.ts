@@ -5,9 +5,16 @@ import JokeRepository from "../Repositories/JokeRepository";
 export const command: Command = {
   name: "add-joke",
   aliases: ["j"],
-  description: "Add a new joke",
+  description: "Adiciona uma nova piada",
+  example: `${process.env.BOT_PREFIX}add-joke Um elefante caiu na lama`,
   run: async (client, message, args) => {
     const joke = args.join(" ");
+
+    if (!joke) {
+      message.reply("Você precisa inserir uma piada na frente do comando");
+      return;
+    }
+
     const repository = new JokeRepository();
     await repository.create({ text: joke });
 

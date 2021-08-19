@@ -4,7 +4,8 @@ import { Command } from "../Interfaces";
 export const command: Command = {
   name: "status",
   aliases: ["s"],
-  description: "Define your status",
+  description: "Defina seu status",
+  example: `${process.env.BOT_PREFIX}status`,
   run: async (client, message, args) => {
     const messageHelper = new MessageHelper();
     const embedMessage = messageHelper.createEmbedMessage({

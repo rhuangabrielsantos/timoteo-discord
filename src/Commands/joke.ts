@@ -5,7 +5,8 @@ import JokeRepository from "../Repositories/JokeRepository";
 export const command: Command = {
   name: "joke",
   aliases: ["j"],
-  description: "Get a random joke",
+  description: "Leia uma piada aleatória",
+  example: `${process.env.BOT_PREFIX}joke`,
   run: async (client, message, args) => {
     const jokes = await new JokeRepository().getAll();
     const joke = jokes[Math.floor(Math.random() * jokes.length)];

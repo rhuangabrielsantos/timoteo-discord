@@ -4,7 +4,8 @@ import { Command, Message } from "../Interfaces";
 export const command: Command = {
   name: "ping",
   aliases: ["p"],
-  description: "Checks the bot's response time.",
+  description: "Verifica o tempo de resposta do bot.",
+  example: `${process.env.BOT_PREFIX}ping`,
   run: async (client, message, args) => {
     const messageArguments = {
       title: "Pong!",
