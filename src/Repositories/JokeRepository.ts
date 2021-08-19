@@ -6,7 +6,7 @@ class JokeRepository {
   private JokeModel = model<Joke>("Joke", JokeSchema);
 
   public async getAll(): Promise<Joke[]> {
-    return await this.JokeModel.find({}).exec();
+    return await this.JokeModel.find({ status: true }).exec();
   }
 
   public async create(joke: Joke): Promise<Joke> {

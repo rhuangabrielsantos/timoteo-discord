@@ -21,7 +21,7 @@ export const command: Command = {
     const messageArguments = {
       title: "A piada foi adicionada!",
       description:
-        "A piada foi adicionada no meu banco de dados, obrigado por ajudar minha inteligencia artificial!",
+        "A piada foi adicionada no meu banco de dados, obrigado por ajudar minha inteligencia artificial! \n Ela estará disponível assim que um administrador autorizá-la.",
       color: "WHITE",
     } as Message;
 
