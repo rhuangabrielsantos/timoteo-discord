@@ -1,5 +1,6 @@
 import { Event, Command } from "../Interfaces";
 import { Message } from "discord.js";
+import MessageHelper from "../Helpers/MessageHelpers";
 
 export const event: Event = {
   name: "messageCreate",
@@ -17,6 +18,18 @@ export const event: Event = {
     if (!cmd) return;
 
     const command = client.commands.get(cmd) || client.aliases.get(cmd);
-    if (command) (command as Command).run(client, message, args);
+
+    if (command) {
+      return (command as Command).run(client, message, args);
+    }
+
+    const messageHelper = new MessageHelper();
+    const embedMessage = messageHelper.createEmbedMessage({
+      title: "Commando não encontrado 😞",
+      description: `O comando digitado não foi encontrado, para verificar os comandos disponíveis utilize o comando: \n\n \`${process.env.BOT_PREFIX}help\``,
+      color: "WHITE",
+    });
+
+    message.channel.send({ embeds: [embedMessage] });
   },
 };
