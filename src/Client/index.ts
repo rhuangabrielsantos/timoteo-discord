@@ -31,6 +31,9 @@ class ExtendedClient extends Client {
     readdirSync(commandPath).forEach(file => {
       const { command } = require(`${commandPath}/${file}`);
       this.commands.set(command.name, command);
+      command.aliases.forEach((aliases: string) => {
+        this.aliases.set(aliases, command);
+      });
     });
 
     const eventPath = path.join(__dirname, "..", "Events");
