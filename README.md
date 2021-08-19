@@ -11,15 +11,18 @@ Clique [aqui](https://discord.com/oauth2/authorize?client_id=791505973591146516&
 ### 2. Crie os cargos necessários para controle de status
 
 Crie os cargos "Disponível", "Ocupado" e "Café" para o controle de status pelo bot, conforme a imagem abaixo (as cores são opcionais):
-![Roles](assets/roles.png)
+
+<img src="assets/roles.png" alt="roles" width="500" height="auto" />
 
 ### 3. Cargo Tinbot
 
 Ao adicionar o Tinbot ao seu servidor, será criado automaticamente o cargo "Tinbot", para que o bot funciona corretamente você deve alterar a ordem dos cargos para que o "Tinbot" esteja primeiro, conforme imagem abaixo:
-![Roles](assets/tinbot-role.png)
+
+<img src="assets/tinbot-role.png" alt="roles" width="500" height="auto" />
 
 Adicionar a permissão "Gerenciar cargos" para que o bot possa alterar os cargos dos membros do servidor.
-![Roles](assets/manage-role.png)
+
+<img src="assets/manage-role.png" alt="roles" width="300" height="auto" />
 
 Pronto! Agora você pode usar o bot.
 
@@ -37,7 +40,7 @@ Pronto! Agora você pode usar o bot.
 
 ## Duvidas?
 
-Qualquer problema com o bot ou duvidas, você pode entrar em nosso [servidor](https://discord.gg/2KvvqUAeb5) para ficar atualizado sobre o andamento do projeto e conversar comigo.
+Qualquer problema com o bot ou duvidas, você pode entrar em nosso [servidor](https://discord.gg/2KvvqUAeb5) para ficar atualizado sobre o andamento do projeto e conversar conosco.
 
 ## Observações
 
