@@ -30,9 +30,13 @@ Pronto! Agora você pode usar o bot.
 
 **add-joke**: Adiciona uma nova piada ao banco de dados do Timóteo.
 
+**add-thought**: Adiciona um novo pensamento ao banco de dados do Timóteo.
+
 **help**: Mostra a lista de comandos disponíveis do servidor.
 
 **joke**: Mostra uma piada aleatória do banco de dados do Timóteo.
+
+**thought**: Mostra um pensamento aleatório do banco de dados do Timóteo.
 
 **ping**: Mostra o tempo de resposta do servidor.
 
