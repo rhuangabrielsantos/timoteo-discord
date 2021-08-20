@@ -20,11 +20,11 @@ Ao adicionar o Timóteo ao seu servidor, será criado automaticamente o cargo "T
 
 <img src="assets/timoteo-role.png" alt="roles" width="500" height="auto" />
 
-Adicionar a permissão "Gerenciar cargos" para que o bot possa alterar os cargos dos membros do servidor.
-
-<img src="assets/manage-role.png" alt="roles" width="300" height="auto" />
-
 Pronto! Agora você pode usar o bot.
+
+### Observações:
+
+O Criador do servidor não terá seu apelido trocado ao solicitar alteração de status igual aos demais membros do servidor, pois não é possível alterar o apelido do criador pela API do Discord por causa das permissões. Se você souber uma forma de fazer isso, por favor, crie um PR com a alteração ❤️.
 
 ## Comandos
 

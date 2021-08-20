@@ -1,8 +1,10 @@
+import { MessageReaction, User } from "discord.js";
+import Client from "../Client";
 import { Event } from "../Interfaces";
 
 export const event: Event = {
   name: "messageReactionAdd",
-  run: (client, reaction, user) => {
+  run: async (client: Client, reaction: MessageReaction, user: User) => {
     if (user?.bot) return;
 
     const reactions = [
@@ -27,24 +29,30 @@ export const event: Event = {
 
     const guild = client.guilds.cache.get(guildId);
 
-    reactions.forEach(emoji => {
+    await reactions.forEach(async emoji => {
       const role = guild?.roles.cache.find(role => role.name === emoji.name);
 
       if (!role) {
-        reaction.message.reply(
+        await reaction.message.reply(
           `Não foi possível encontrar o cargo ${emoji.name}, por favor, crie o cargo com o nome ${emoji.name}.`
         );
 
         return;
       }
 
-      guild?.members.cache.get(user.id)?.roles.remove(role.id);
+      await guild?.members.cache.get(user.id)?.roles.remove(role.id);
 
       if (emoji.symbol === emojiReaction) {
-        guild?.members.cache.get(user.id)?.roles.add(role.id);
-        reaction.message.delete();
+        await guild?.members.cache.get(user.id)?.roles.add(role.id);
 
-        reaction.message.channel.send("Status alterado com sucesso!");
+        if (guild?.ownerId !== user.id) {
+          await guild?.members.cache
+            .get(user.id)
+            ?.setNickname(emoji.symbol + " " + user.username.slice(0, -2));
+        }
+
+        await reaction.message.channel.send("Status alterado com sucesso!");
+        await reaction.message.delete();
       }
     });
   },

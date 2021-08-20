@@ -7,6 +7,13 @@ export const command: Command = {
   description: "Defina seu status",
   example: `${process.env.BOT_PREFIX}status`,
   run: async (client, message, args) => {
+    if (!message.guild?.me?.permissions.has("ADMINISTRATOR")) {
+      await message.reply(
+        "Removeram meu cargo de administrador, por isso não posso executar essa função."
+      );
+      return;
+    }
+
     const messageHelper = new MessageHelper();
     const embedMessage = messageHelper.createEmbedMessage({
       title: "Defina seu status",
