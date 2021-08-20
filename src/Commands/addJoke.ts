@@ -34,6 +34,6 @@ export const command: Command = {
       messageArguments
     );
 
-    message.channel.send({ embeds: [embedMessage] });
+    await message.channel.send({ embeds: [embedMessage] });
   },
 };
