@@ -50,7 +50,7 @@ export const event: Event = {
             user.username.includes(reactions[0].symbol) ||
             user.username.includes(reactions[1].symbol) ||
             user.username.includes(reactions[2].symbol)
-              ? user.username.replace(reactions[0].symbol, "").slice(0, -2)
+              ? user.username.slice(0, -2)
               : user.username;
 
           await guild?.members.cache
