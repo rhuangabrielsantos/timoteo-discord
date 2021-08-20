@@ -5,7 +5,7 @@ import MessageHelper from "../Helpers/MessageHelpers";
 export const event: Event = {
   name: "messageCreate",
   run: (client, message: Message) => {
-    const botPrefix = process.env.BOT_PREFIX || "!tinbot ";
+    const botPrefix = process.env.BOT_PREFIX || "!timoteo ";
 
     if (message.author.bot || !message.content.startsWith(botPrefix)) {
       return;

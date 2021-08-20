@@ -28,11 +28,11 @@ Pronto! Agora você pode usar o bot.
 
 ## Comandos
 
-**add-joke**: Adiciona uma nova piada ao banco de dados do Tinbot.
+**add-joke**: Adiciona uma nova piada ao banco de dados do Timóteo.
 
 **help**: Mostra a lista de comandos disponíveis do servidor.
 
-**joke**: Mostra uma piada aleatória do banco de dados do Tinbot.
+**joke**: Mostra uma piada aleatória do banco de dados do Timóteo.
 
 **ping**: Mostra o tempo de resposta do servidor.
 
