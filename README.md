@@ -1,4 +1,4 @@
-![tinbot-discord](https://socialify.git.ci/rhuangabrielsantos/tinbot-discord/image?description=1&font=Raleway&forks=1&issues=1&language=1&owner=1&pulls=1&stargazers=1&theme=Dark)
+![tinbot-discord](https://socialify.git.ci/rhuangabrielsantos/timoteo-discord/image?description=1&font=Raleway&forks=1&issues=1&language=1&owner=1&pulls=1&stargazers=1&theme=Dark)
 
 ## Primeiros passos
 
