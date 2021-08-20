@@ -2,7 +2,7 @@
 
 ## Primeiros passos
 
-Se você deseja ter o Tinbot em seu servidor Discord, siga as instruções abaixo para que todas as funções do bot sejam ativadas.
+Se você deseja ter o Timóteo em seu servidor Discord, siga as instruções abaixo para que todas as funções do bot sejam ativadas.
 
 ### 1. Convide o bot para seu servidor
 
@@ -14,11 +14,11 @@ Crie os cargos "Disponível", "Ocupado" e "Café" para o controle de status pelo
 
 <img src="assets/roles.png" alt="roles" width="500" height="auto" />
 
-### 3. Cargo Tinbot
+### 3. Cargo Timóteo
 
-Ao adicionar o Tinbot ao seu servidor, será criado automaticamente o cargo "Tinbot", para que o bot funciona corretamente você deve alterar a ordem dos cargos para que o "Tinbot" esteja primeiro, conforme imagem abaixo:
+Ao adicionar o Timóteo ao seu servidor, será criado automaticamente o cargo "Timóteo", para que o bot funciona corretamente você deve alterar a ordem dos cargos para que o "Timóteo" esteja primeiro, conforme imagem abaixo:
 
-<img src="assets/tinbot-role.png" alt="roles" width="500" height="auto" />
+<img src="assets/timoteo-role.png" alt="roles" width="500" height="auto" />
 
 Adicionar a permissão "Gerenciar cargos" para que o bot possa alterar os cargos dos membros do servidor.
 
@@ -41,10 +41,6 @@ Pronto! Agora você pode usar o bot.
 ## Duvidas?
 
 Qualquer problema com o bot ou duvidas, você pode entrar em nosso [servidor](https://discord.gg/2KvvqUAeb5) para ficar atualizado sobre o andamento do projeto e conversar conosco.
-
-## Observações
-
-O projeto não possui vinculo com a [Tinbot Robótica](https://tinbot.com.br/) e não é oficial.
 
 ## Licença
 
