@@ -46,9 +46,16 @@ export const event: Event = {
         await guild?.members.cache.get(user.id)?.roles.add(role.id);
 
         if (guild?.ownerId !== user.id) {
+          const nickName =
+            user.username.includes(reactions[0].symbol) ||
+            user.username.includes(reactions[1].symbol) ||
+            user.username.includes(reactions[2].symbol)
+              ? user.username.replace(reactions[0].symbol, "")
+              : user.username;
+
           await guild?.members.cache
             .get(user.id)
-            ?.setNickname(emoji.symbol + " " + user.username.slice(0, -2));
+            ?.setNickname(emoji.symbol + " " + nickName);
         }
 
         await reaction.message.channel.send("Status alterado com sucesso!");
