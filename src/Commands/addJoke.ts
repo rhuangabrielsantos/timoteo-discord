@@ -4,7 +4,7 @@ import JokeRepository from "../Repositories/JokeRepository";
 
 export const command: Command = {
   name: "add-joke",
-  aliases: ["j"],
+  aliases: ["aj"],
   description: "Adiciona uma nova piada",
   example: `${process.env.BOT_PREFIX}add-joke Um elefante caiu na lama`,
   run: async (client, message, args) => {
@@ -16,12 +16,17 @@ export const command: Command = {
     }
 
     const repository = new JokeRepository();
-    await repository.create({ text: joke });
+    await repository.create({
+      message: joke,
+      author: message.author.username,
+      created_at: new Date().toISOString(),
+    });
 
     const messageArguments = {
       title: "A piada foi adicionada!",
       description:
-        "A piada foi adicionada no meu banco de dados, obrigado por ajudar minha inteligencia artificial! \n Ela estará disponível assim que um administrador autorizá-la.",
+        `O usuário **${message.author.username}** adicionou a piada abaixo para aprovação: \n\n` +
+        `- *${joke}*`,
       color: "WHITE",
     } as Message;
 

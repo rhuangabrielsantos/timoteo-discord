@@ -1,4 +1,6 @@
 export interface Joke {
-  text: string;
+  message: string;
+  author: string;
   status?: boolean;
+  created_at: string;
 }

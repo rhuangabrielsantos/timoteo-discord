@@ -9,11 +9,12 @@ export const command: Command = {
   example: `${process.env.BOT_PREFIX}joke`,
   run: async (client, message, args) => {
     const jokes = await new JokeRepository().getAll();
-    const joke = jokes[Math.floor(Math.random() * jokes.length)];
+    const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+    const year = new Date(randomJoke.created_at).getFullYear();
 
     const messageArguments = {
-      title: joke.text,
-      description: "Uma piada para alegrar seu dia!",
+      title: randomJoke.message,
+      description: `Autor: **${randomJoke.author}**, ${year}`,
       color: "WHITE",
     } as Message;
 
