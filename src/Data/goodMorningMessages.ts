@@ -1,0 +1,16 @@
+export const goodMorningMessages: string[] = [
+  "Bom dia flores do dia.",
+  "Bom dia pra quem?",
+  "Bom dia galera do chapéu!",
+  "Bom dia, acordar é a melhor razão para ser feliz.",
+  "Bom dia, com muita musica https://youtu.be/cjONzZPJONc",
+  "Bom dia, um dia de vitórias e superações para todos nós.",
+  "Bom dia, o dia de hoje nunca mais vai se repetir. Faça o melhor dele!",
+  "Bom dia, a vida é muito curta para começar o dia com pedaços partidos de ontem",
+  "Bom dia, não importa a cor do céu, quem faz o dia bonito é você!",
+  "Bom dia, parece que alguém não quer trabalhar hoje, sim sou eu.",
+  "Bom dia, não existe um dia bom que não possa piorar!",
+  "Bom dia, não tive criatividade pra frase de hoje.",
+  "Bom dia, novo dia, novas metas, novas missões!",
+  "Bom dia pra todos, menos pra alguns.",
+];
