@@ -3,11 +3,13 @@ import { connect } from "mongoose";
 import path from "path";
 import { readdirSync } from "fs";
 import { Command, Config, Event } from "../Interfaces";
+import Schedule from "../Core/Schedule";
 
 class ExtendedClient extends Client {
   public commands: Collection<string, Command> = new Collection();
   public events: Collection<string, Event> = new Collection();
   public aliases: Collection<string, Command> = new Collection();
+  private schedule: Schedule = new Schedule();
 
   private config: Config = {
     environment: process.env.ENVIRONMENT || "development",
@@ -41,6 +43,16 @@ class ExtendedClient extends Client {
       const { event } = await import(`${eventPath}/${file}`);
       this.events.set(event.name, event);
       this.on(event.name, event.run.bind(null, this));
+    });
+
+    const schedulePath = path.join(__dirname, "..", "Schedules");
+    readdirSync(schedulePath).forEach(async file => {
+      const { schedule } = await import(`${schedulePath}/${file}`);
+      this.schedule.add(
+        schedule.name,
+        schedule.timerRules,
+        schedule.callback.bind(null, this)
+      );
     });
   }
 }
