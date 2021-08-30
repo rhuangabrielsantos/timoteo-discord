@@ -42,6 +42,10 @@ O Criador do servidor não terá seu apelido trocado ao solicitar alteração de
 
 **status**: Mostra o status do servidor.
 
+## Agendas
+
+**mensagem de bom dia**: Mensagem de bom dia das 7:30 às 11:30 todos os dias que alguém mandar mensagem no servidor.
+
 ## Duvidas?
 
 Qualquer problema com o bot ou duvidas, você pode entrar em nosso [servidor](https://discord.gg/2KvvqUAeb5) para ficar atualizado sobre o andamento do projeto e conversar conosco.
