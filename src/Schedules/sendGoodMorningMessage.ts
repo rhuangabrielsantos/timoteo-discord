@@ -6,10 +6,8 @@ import { Schedule } from "../Interfaces";
 
 export const schedule: Schedule = {
   name: "sendGoodMorningMessage",
-  timerRules: ScheduleHelper.createTimerRule({ hour: 9, minute: 15 }),
+  timerRules: ScheduleHelper.createTimerRule({ hour: 7, minute: 30 }),
   callback: async (client: Client) => {
-    console.log("Sending good morning message");
-
     const messages = goodMorningMessages;
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
 
