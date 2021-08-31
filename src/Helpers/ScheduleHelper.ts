@@ -28,6 +28,8 @@ export default class ScheduleHelper {
       rule.second = rules.second;
     }
 
+    rule.tz = "America/Sao_Paulo";
+
     return rule;
   }
 }

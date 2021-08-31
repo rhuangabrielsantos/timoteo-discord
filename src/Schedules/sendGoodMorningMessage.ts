@@ -6,7 +6,7 @@ import { Schedule } from "../Interfaces";
 
 export const schedule: Schedule = {
   name: "sendGoodMorningMessage",
-  timerRules: ScheduleHelper.createTimerRule({ hour: 9, minute: 0 }),
+  timerRules: ScheduleHelper.createTimerRule({ hour: 9, minute: 15 }),
   callback: async (client: Client) => {
     console.log("Sending good morning message");
 
