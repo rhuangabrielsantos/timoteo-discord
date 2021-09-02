@@ -4,6 +4,12 @@
   "main": "src/index.ts",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.15.4",
+    "@babel/preset-env": "^7.15.4",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/jest": "^27.0.1",
+    "babel-jest": "^27.1.0",
+    "jest": "^27.1.0",
     "nodemon": "^2.0.12"
   },
   "dependencies": {
@@ -23,7 +29,8 @@
   },
   "scripts": {
     "start": "ts-node src/index.ts",
-    "dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts"
+    "dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
+    "test": "jest"
   },
   "engines": {
     "node": "16.6.2",
