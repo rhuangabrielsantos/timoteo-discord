@@ -6,4 +6,4 @@ install:
   - npm install
 script:
   - npm test
-  - codecov -f coverage/*.json
+  - codecov
