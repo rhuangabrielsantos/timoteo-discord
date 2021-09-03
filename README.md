@@ -1,5 +1,10 @@
 ![timoteo-discord](https://socialify.git.ci/rhuangabrielsantos/timoteo-discord/image?description=1&font=Raleway&forks=1&issues=1&language=1&owner=1&pulls=1&stargazers=1&theme=Dark)
 
+[![codecov.io](https://img.shields.io/codecov/c/github/rhuangabrielsantos/timoteo-discord?style=flat-square)](https://codecov.io/github/rhuangabrielsantos/timoteo-discord?branch=master)
+[![CodeFactor](https://www.codefactor.io/repository/github/rhuangabrielsantos/timoteo-discord/badge)](https://www.codefactor.io/repository/github/rhuangabrielsantos/timoteo-discord)
+[![travis-ci](https://img.shields.io/travis/rhuangabrielsantos/timoteo-discord?style=flat-square)](https://travis-ci.com/github/rhuangabrielsantos/timoteo-discord)
+[![gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square)](https://gitmoji.dev/)
+
 ## Primeiros passos
 
 Se você deseja ter o Timóteo em seu servidor Discord, siga as instruções abaixo para que todas as funções do bot sejam ativadas.
