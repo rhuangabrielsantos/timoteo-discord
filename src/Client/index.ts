@@ -23,11 +23,7 @@ class ExtendedClient extends Client {
     this.login(this.config.botToken);
 
     const mongURI = `mongodb+srv://${this.config.dbUser}:${this.config.dbPass}@${this.config.dbHost}/${this.config.environment}`;
-    connect(mongURI, {
-      useNewUrlParser: true,
-      useFindAndModify: true,
-      useUnifiedTopology: true,
-    });
+    connect(mongURI);
 
     const commandPath = path.join(__dirname, "..", "Commands");
     readdirSync(commandPath).forEach(file => {
