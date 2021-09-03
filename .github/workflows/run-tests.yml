@@ -1,0 +1,20 @@
+name: Run Tests
+
+on:
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run development settings
+        run: yarn install
+
+      - name: Run Jest
+        uses: stefanoeb/jest-action@1.0.4
