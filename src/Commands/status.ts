@@ -1,4 +1,4 @@
-import MessageHelper from "../Helpers/MessageHelpers";
+import MessageHelper from "../Helpers/MessageHelper";
 import { Command } from "../Interfaces";
 
 export const command: Command = {
