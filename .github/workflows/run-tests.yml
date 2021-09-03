@@ -2,7 +2,7 @@ name: Run Tests
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
   workflow_dispatch:
 
@@ -12,9 +12,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16.6.2"
 
       - name: Run development settings
         run: yarn install
 
       - name: Run Jest
-        uses: stefanoeb/jest-action@1.0.4
+        run: yarn test

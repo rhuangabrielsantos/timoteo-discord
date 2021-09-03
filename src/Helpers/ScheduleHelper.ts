@@ -3,13 +3,17 @@ import { TimerRules } from "../Interfaces";
 
 export default class ScheduleHelper {
   static createTimerRule(rules: TimerRules): RecurrenceRule {
-    if (process.env.ENVIRONMENT === "development") {
+    if (
+      process.env.ENVIRONMENT === "development" &&
+      process.env.SCHEDULE_TEST === "on"
+    ) {
       const now = new Date();
 
       const rule = new RecurrenceRule();
       rule.hour = now.getHours();
       rule.minute = now.getMinutes();
       rule.second = now.getSeconds() + 5;
+      rule.tz = "America/Sao_Paulo";
 
       return rule;
     }
