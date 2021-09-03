@@ -6,11 +6,11 @@ class ThoughtRepository {
   private ThoughtModel = model<Thought>("Thought", ThoughtSchema);
 
   public async getAll(): Promise<Thought[]> {
-    return await this.ThoughtModel.find({ status: true }).exec();
+    return this.ThoughtModel.find({ status: true }).exec();
   }
 
   public async create(thought: Thought): Promise<Thought> {
-    return await this.ThoughtModel.create(thought);
+    return this.ThoughtModel.create(thought);
   }
 }
 
