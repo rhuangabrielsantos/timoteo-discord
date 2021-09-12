@@ -13,4 +13,5 @@ export const goodMorningMessages: string[] = [
   "Bom dia, não tive criatividade pra frase de hoje.",
   "Bom dia, novo dia, novas metas, novas missões!",
   "Bom dia pra todos, menos pra alguns.",
+  "Bom dia meu consagrado https://www.youtube.com/watch?v=hQVJReL92TE",
 ];
