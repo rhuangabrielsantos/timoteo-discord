@@ -21,7 +21,7 @@ Crie os cargos "Disponível", "Ocupado" e "Café" para o controle de status pelo
 
 ### 3. Cargo Timóteo
 
-Ao adicionar o Timóteo ao seu servidor, será criado automaticamente o cargo "Timóteo", para que o bot funciona corretamente você deve alterar a ordem dos cargos para que o "Timóteo" esteja primeiro, conforme imagem abaixo:
+Ao adicionar o Timóteo ao seu servidor, será criado automaticamente o cargo "Timóteo", para que o bot funcione corretamente você deve alterar a ordem dos cargos para que o "Timóteo" esteja primeiro, conforme imagem abaixo:
 
 <img src="assets/timoteo-role.png" alt="roles" width="500" height="auto" />
 
