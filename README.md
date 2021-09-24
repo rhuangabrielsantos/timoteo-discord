@@ -7,7 +7,7 @@
 
 ### Convide o bot para seu servidor
 
-Clique [aqui](https://discord.com/oauth2/authorize?client_id=791505973591146516&permissions=8&scope=bot) para convidar o bot para seu servidor.
+Clique [aqui](https://discord.com/api/oauth2/authorize?client_id=791505973591146516&permissions=8&scope=bot%20applications.commands) para convidar o bot para seu servidor.
 
 ## Comandos
 
