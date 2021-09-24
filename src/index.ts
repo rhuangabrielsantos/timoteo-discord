@@ -9,7 +9,7 @@ new Client({
     afk: false,
     activities: [
       {
-        name: `${process.env.BOT_PREFIX}help`,
+        name: "/comandos",
         type: "LISTENING",
       },
     ],
