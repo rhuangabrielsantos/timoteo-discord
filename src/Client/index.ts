@@ -8,7 +8,6 @@ import Schedule from "../Core/Schedule";
 class ExtendedClient extends Client {
   public commands: Collection<string, Command> = new Collection();
   public events: Collection<string, Event> = new Collection();
-  public aliases: Collection<string, Command> = new Collection();
   private schedule: Schedule = new Schedule();
 
   private config: Config = {
@@ -29,9 +28,6 @@ class ExtendedClient extends Client {
     readdirSync(commandPath).forEach(file => {
       const { command } = require(`${commandPath}/${file}`);
       this.commands.set(command.name, command);
-      command.aliases.forEach((aliases: string) => {
-        this.aliases.set(aliases, command);
-      });
     });
 
     const eventPath = path.join(__dirname, "..", "Events");

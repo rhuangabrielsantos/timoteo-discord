@@ -5,51 +5,27 @@
 [![travis-ci](https://img.shields.io/travis/rhuangabrielsantos/timoteo-discord?style=flat-square)](https://travis-ci.com/github/rhuangabrielsantos/timoteo-discord)
 [![gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square)](https://gitmoji.dev/)
 
-## Primeiros passos
+### Convide o bot para seu servidor
 
-Se você deseja ter o Timóteo em seu servidor Discord, siga as instruções abaixo para que todas as funções do bot sejam ativadas.
-
-### 1. Convide o bot para seu servidor
-
-Clique [aqui](https://discord.com/oauth2/authorize?client_id=791505973591146516&permissions=8&scope=bot) para convidar o bot para seu servidor.
-
-### 2. Crie os cargos necessários para controle de status
-
-Crie os cargos "Disponível", "Ocupado" e "Café" para o controle de status pelo bot, conforme a imagem abaixo (as cores são opcionais):
-
-<img src="assets/roles.png" alt="roles" width="500" height="auto" />
-
-### 3. Cargo Timóteo
-
-Ao adicionar o Timóteo ao seu servidor, será criado automaticamente o cargo "Timóteo", para que o bot funcione corretamente você deve alterar a ordem dos cargos para que o "Timóteo" esteja primeiro, conforme imagem abaixo:
-
-<img src="assets/timoteo-role.png" alt="roles" width="500" height="auto" />
-
-Pronto! Agora você pode usar o bot.
-
-### Observações:
-
-O Criador do servidor não terá seu apelido trocado ao solicitar alteração de status igual aos demais membros do servidor, pois não é possível alterar o apelido do criador pela API do Discord por causa das permissões. Se você souber uma forma de fazer isso, por favor, crie um PR com a alteração ❤️.
+Clique [aqui](https://discord.com/api/oauth2/authorize?client_id=791505973591146516&permissions=8&scope=bot%20applications.commands) para convidar o bot para seu servidor.
 
 ## Comandos
 
-**add-joke**: Adiciona uma nova piada ao banco de dados do Timóteo.
+**adicionar-piada**: Adiciona uma nova piada.
 
-**add-thought**: Adiciona um novo pensamento ao banco de dados do Timóteo.
+**adicionar-pensamento**: Adiciona um novo pensamento.
 
-**help**: Mostra a lista de comandos disponíveis do servidor.
+**atualizar-comandos**: Atualiza os comandos do bot para os mais recentes disponíveis.
 
-**joke**: Mostra uma piada aleatória do banco de dados do Timóteo.
+**piada**: Leia uma piada aleatória bem divertida (ou não).
 
-**thought**: Mostra um pensamento aleatório do banco de dados do Timóteo.
+**pensamento**: Leia um pensamento para motivar seu dia (ou não).
 
-**ping**: Mostra o tempo de resposta do servidor.
-
-**status**: Mostra o status do servidor.
+**ping**: Verifica o tempo de resposta do servidor.
 
 ## Agendas
 
-**mensagem de bom dia**: Mensagem de bom dia das 7:30 às 11:30 todos os dias que alguém mandar mensagem no servidor.
+**mensagem de bom dia**: Mensagem de bom dia das 7:30 às 11:30 todos os dias que alguém mandar mensagem no servidor neste horário.
 
 ## Duvidas?
 

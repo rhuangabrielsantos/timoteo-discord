@@ -1,39 +1,37 @@
-import MessageHelper from "../Helpers/MessageHelper";
-import { Command, Message } from "../Interfaces";
+import { CommandInteractionOptionResolver, Interaction } from "discord.js";
+
+import Client from "../Client";
+import { Command } from "../Interfaces";
 import JokeRepository from "../Repositories/JokeRepository";
 
 export const command: Command = {
-  name: "add-joke",
-  aliases: ["aj"],
+  name: "adicionar-piada",
   description: "Adiciona uma nova piada",
-  example: `${process.env.BOT_PREFIX}add-joke Um elefante caiu na lama`,
-  run: async (client, message, args) => {
-    const joke = args.join(" ");
-
-    if (!joke) {
-      message.reply("Você precisa inserir uma piada na frente do comando");
-      return;
-    }
+  options: [
+    {
+      name: "piada",
+      type: "STRING" as const,
+      description: "Piada engraçada (ou não) que será enviada para aprovação",
+      required: true,
+    },
+  ],
+  run: async (
+    client: Client,
+    interaction: Interaction,
+    options: CommandInteractionOptionResolver
+  ) => {
+    const joke = options.get("piada")!.value! as string;
 
     const repository = new JokeRepository();
     await repository.create({
       message: joke,
-      author: message.author.username,
+      author: interaction.user.username,
       created_at: new Date().toISOString(),
     });
 
-    const messageArguments = {
-      title: "A piada foi adicionada!",
-      description:
-        `O usuário **${message.author.username}** adicionou a piada abaixo para aprovação: \n\n` +
-        `- *${joke}*`,
-      color: "WHITE",
-    } as Message;
-
-    const embedMessage = new MessageHelper().createEmbedMessage(
-      messageArguments
+    return (
+      `O usuário **${interaction.user.username}** adicionou a piada abaixo para aprovação:\n` +
+      `- *${joke}*`
     );
-
-    await message.channel.send({ embeds: [embedMessage] });
   },
 };

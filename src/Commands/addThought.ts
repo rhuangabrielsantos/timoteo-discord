@@ -1,39 +1,38 @@
-import MessageHelper from "../Helpers/MessageHelper";
-import { Command, Message } from "../Interfaces";
+import { CommandInteractionOptionResolver, Interaction } from "discord.js";
+
+import Client from "src/Client";
+import { Command } from "../Interfaces";
 import ThoughtRepository from "../Repositories/ThoughtRepository";
 
 export const command: Command = {
-  name: "add-thought",
-  aliases: ["at"],
+  name: "adicionar-pensamento",
   description: "Adiciona um novo pensamento",
-  example: `${process.env.BOT_PREFIX}add-thought Um elefante caiu na lama`,
-  run: async (client, message, args) => {
-    const thought = args.join(" ");
-
-    if (!thought) {
-      message.reply("Você precisa inserir um pensamento na frente do comando");
-      return;
-    }
+  options: [
+    {
+      name: "pensamento",
+      type: "STRING" as const,
+      description:
+        "Pensamento motivacional (ou não) que será enviado para aprovação",
+      required: true,
+    },
+  ],
+  run: async (
+    client: Client,
+    interaction: Interaction,
+    options: CommandInteractionOptionResolver
+  ) => {
+    const thought = options.get("pensamento")!.value! as string;
 
     const repository = new ThoughtRepository();
     await repository.create({
       message: thought,
-      author: message.author.username,
+      author: interaction.user.username,
       created_at: new Date().toISOString(),
     });
 
-    const messageArguments = {
-      title: "Um pensamento foi adicionado!",
-      description:
-        `O usuário **${message.author.username}** adicionou o pensamento abaixo para aprovação: \n\n` +
-        `- *${thought}*`,
-      color: "WHITE",
-    } as Message;
-
-    const embedMessage = new MessageHelper().createEmbedMessage(
-      messageArguments
+    return (
+      `O usuário **${interaction.user.username}** adicionou o pensamento abaixo para aprovação: \n` +
+      `- *${thought}*`
     );
-
-    await message.channel.send({ embeds: [embedMessage] });
   },
 };
