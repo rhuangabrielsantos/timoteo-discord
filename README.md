@@ -15,8 +15,6 @@ Clique [aqui](https://discord.com/api/oauth2/authorize?client_id=791505973591146
 
 **adicionar-pensamento**: Adiciona um novo pensamento.
 
-**atualizar-comandos**: Atualiza os comandos do bot para os mais recentes disponíveis.
-
 **piada**: Leia uma piada aleatória bem divertida (ou não).
 
 **pensamento**: Leia um pensamento para motivar seu dia (ou não).
