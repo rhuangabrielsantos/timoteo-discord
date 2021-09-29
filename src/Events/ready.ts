@@ -24,6 +24,8 @@ export const event: Event = {
       });
 
       await guild.commands.set(commandsToDeploy);
+
+      console.log(`${guild.name} has been deployed!`);
     });
   },
 };

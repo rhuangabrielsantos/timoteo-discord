@@ -1,5 +1,9 @@
 import Client from "../Client";
-import { CommandInteractionOptionResolver, Interaction } from "discord.js";
+import {
+  ApplicationCommandOption,
+  CommandInteractionOptionResolver,
+  Interaction,
+} from "discord.js";
 
 interface Run {
   (
@@ -9,16 +13,9 @@ interface Run {
   ): Promise<string>;
 }
 
-interface CommandOptions {
-  name: string;
-  type: string;
-  description: string;
-  required: boolean;
-}
-
 export interface Command {
   name: string;
   description: string;
-  options: CommandOptions[];
+  options: ApplicationCommandOption[];
   run: Run;
 }
