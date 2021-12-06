@@ -25,6 +25,10 @@ class BetGameRepository {
   public async deleteByCode(pollCode: String): Promise<void> {
     this.BetGameModel.findOneAndDelete({ pollCode }).exec();
   }
+
+  public async findAll(): Promise<BetGame[]> {
+    return this.BetGameModel.find().exec();
+  }
 }
 
 export default BetGameRepository;
