@@ -28,11 +28,7 @@ export const event: Event = {
 
         console.log(`${guild.name} has been deployed!`);
       } catch (error) {
-        client.users.cache
-          .get(guild.ownerId)
-          .send(
-            "Olá, para o bot funcionar corretamente em seu servidor, você deve atribuir a permissão de criar comandos, remova o bot e convide ele novamente através do link: https://discord.com/api/oauth2/authorize?client_id=791505973591146516&permissions=8&scope=bot%20applications.commands"
-          );
+        console.log(error);
 
         console.log(`${guild.name} Error!`);
       }
