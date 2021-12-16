@@ -14,6 +14,7 @@ test("Given a message to createEmbedMessage method, Should create embed message"
   expectedEmbedMessage.setTitle(message.title);
   expectedEmbedMessage.setDescription(message.description);
   expectedEmbedMessage.setColor(message.color);
+  expectedEmbedMessage.setTimestamp();
 
   expect(embedMessage).toEqual(expectedEmbedMessage);
 });
