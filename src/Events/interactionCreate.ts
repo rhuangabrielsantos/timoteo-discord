@@ -11,13 +11,14 @@ export const event: Event = {
     const command = client.commands.get(interaction.commandName);
 
     if (command) {
+      await interaction.deferReply();
       const response = await (command as Command).run(
         client,
         interaction,
         interaction.options
       );
 
-      await interaction.reply(response);
+      await interaction.editReply(response);
     }
   },
 };

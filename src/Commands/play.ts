@@ -7,6 +7,7 @@ import {
 import Client from "../Client";
 
 import { Command } from "../Interfaces";
+import { CommandResponse } from "../Interfaces/Command";
 
 import MessageHelper from "../Helpers/MessageHelper";
 import { generateBoardView } from "../Helpers/TicTacToeHelper";
@@ -28,7 +29,7 @@ export const command: Command = {
     client: Client,
     interaction: Interaction,
     options: CommandInteractionOptionResolver
-  ) => {
+  ): CommandResponse => {
     const idFirstPlayer = interaction.user.id;
     const idSecondPlayer = options.get("desafiado").value as string;
 
@@ -53,18 +54,16 @@ export const command: Command = {
 
     const message = interaction.channel.send({ embeds: [challengeEmbed] });
 
-    message.then(async message => {
+    const response = await message.then(async message => {
       await message.react("✅").then(() => message.react("⛔"));
 
       const filter = (reaction: MessageReaction, user: User) =>
         user.id == idSecondPlayer &&
         (reaction.emoji.name == "✅" || reaction.emoji.name == "⛔");
 
-      message
+      return await message
         .awaitReactions({ filter, max: 1, time: 30000, errors: ["time"] })
         .then(async collected => {
-          message.delete();
-
           if (collected.first().emoji.name == "✅") {
             const board = generateBoardView([0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
@@ -78,10 +77,11 @@ export const command: Command = {
             });
             await ticTacToeService.acceptGame(idFirstPlayer);
 
-            await interaction.channel.send({ embeds: [successMessage] });
+            await message.reactions.removeAll();
+            await message.edit({ embeds: [successMessage] });
             await interaction.channel.send(board);
 
-            return;
+            return "Finalmente tenemos un juego, hermanito";
           }
 
           await ticTacToeService.deleteGameByFirstPlayer(idFirstPlayer);
@@ -95,7 +95,9 @@ export const command: Command = {
             color: "#0099ff",
           });
 
-          await interaction.channel.send({ embeds: [refusedMessage] });
+          await message.reactions.removeAll();
+          await message.edit({ embeds: [refusedMessage] });
+          return "Ihhh, parece que ele ficou com medinho!";
         })
         .catch(async () => {
           message.delete();
@@ -113,10 +115,13 @@ export const command: Command = {
             color: "#0099ff",
           });
 
-          await interaction.channel.send({ embeds: [timeoutMessage] });
+          await message.reactions.removeAll();
+          await message.edit({ embeds: [timeoutMessage] });
+
+          return "Timeooooout, alow tem alguém aí?";
         });
     });
 
-    return "Aguardando resposta do desafiado...";
+    return response;
   },
 };

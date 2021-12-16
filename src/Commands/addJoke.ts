@@ -2,6 +2,7 @@ import { CommandInteractionOptionResolver, Interaction } from "discord.js";
 
 import Client from "../Client";
 import { Command } from "../Interfaces";
+
 import JokeRepository from "../Repositories/JokeRepository";
 
 export const command: Command = {

@@ -81,20 +81,20 @@ export const command: Command = {
           color: "#0099ff",
         });
 
-        await interaction.channel.send({ embeds: [gameOverEmbed] });
         await interaction.channel.send(refreshedBoard.view);
 
-        return "O jogo acabou!";
+        return { embeds: [gameOverEmbed] };
       }
+
       const game = await ticTacToeService.getGame(playerId);
 
       const idNextPlayer =
         playerId === game.first_player ? game.second_player : game.first_player;
       const mentionNextPlayer = `<@!${idNextPlayer}>`;
 
-      await interaction.channel.send(refreshedBoard.view);
+      await interaction.channel.send(`Sua vez ${mentionNextPlayer}!`);
 
-      return `O próximo jogador é ${mentionNextPlayer}`;
+      return refreshedBoard.view;
     } catch (error) {
       return error.message;
     }

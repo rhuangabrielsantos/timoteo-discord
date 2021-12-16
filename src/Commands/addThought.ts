@@ -1,6 +1,7 @@
 import { CommandInteractionOptionResolver, Interaction } from "discord.js";
 
-import Client from "src/Client";
+import Client from "../Client";
+
 import { Command } from "../Interfaces";
 import ThoughtRepository from "../Repositories/ThoughtRepository";
 
