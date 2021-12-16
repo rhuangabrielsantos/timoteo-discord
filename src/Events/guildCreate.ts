@@ -1,7 +1,8 @@
 import { Guild } from "discord.js";
 import { readdirSync } from "fs";
 import path from "path";
-import Client from "src/Client";
+
+import Client from "../Client";
 import { Event } from "../Interfaces";
 
 export const event: Event = {

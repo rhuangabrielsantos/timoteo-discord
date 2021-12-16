@@ -1,5 +1,5 @@
 import { Interaction } from "discord.js";
-import TicTacToeRepository from "src/Repositories/TicTacToeRepository";
+import TicTacToeRepository from "../Repositories/TicTacToeRepository";
 
 interface PlayersProps {
   firstPlayer: string;

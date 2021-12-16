@@ -1,6 +1,6 @@
 import { CommandInteractionOptionResolver, Interaction } from "discord.js";
-import MessageHelper from "src/Helpers/MessageHelper";
-import TicTacToeService from "src/Services/TicTacToeService";
+import MessageHelper from "../Helpers/MessageHelper";
+import TicTacToeService from "../Services/TicTacToeService";
 import Client from "../Client";
 
 import { Command } from "../Interfaces";

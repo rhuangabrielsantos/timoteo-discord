@@ -1,5 +1,5 @@
-import { CellEnum } from "src/Enums/CellEnum";
-import { TicTacToe } from "src/Interfaces";
+import { CellEnum } from "../Enums/CellEnum";
+import { TicTacToe } from "../Interfaces";
 import { MarkEnum } from "../Enums/MarkEnum";
 
 export function generateEmptyBoard() {
