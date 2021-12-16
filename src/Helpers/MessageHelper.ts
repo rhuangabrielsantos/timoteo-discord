@@ -8,6 +8,7 @@ class MessageHelper {
     this.MessageEmbed.setTitle(message.title);
     this.MessageEmbed.setDescription(message.description);
     this.MessageEmbed.setColor(message.color);
+    this.MessageEmbed.setTimestamp();
 
     return this.MessageEmbed;
   }

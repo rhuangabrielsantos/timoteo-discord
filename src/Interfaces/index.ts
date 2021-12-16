@@ -7,4 +7,5 @@ export { Joke } from "./Joke";
 export { Message } from "./Message";
 export { Thought } from "./Thought";
 export { Schedule } from "./Schedule";
+export { TicTacToe } from "./TicTacToe";
 export { TimerRules } from "./TimerRules";
