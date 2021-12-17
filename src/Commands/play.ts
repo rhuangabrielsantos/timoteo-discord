@@ -100,8 +100,6 @@ export const command: Command = {
           return "Ihhh, parece que ele ficou com medinho!";
         })
         .catch(async () => {
-          message.delete();
-
           await ticTacToeService.deleteGameByFirstPlayer(idFirstPlayer);
 
           const messageTitle = "Acabou o tempo!";
