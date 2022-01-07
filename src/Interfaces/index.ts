@@ -9,3 +9,4 @@ export { Thought } from "./Thought";
 export { Schedule } from "./Schedule";
 export { TicTacToe } from "./TicTacToe";
 export { TimerRules } from "./TimerRules";
+export { User } from "./User";

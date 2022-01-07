@@ -43,7 +43,8 @@
     "mongoose": "^6.0.4",
     "node-schedule": "^2.0.0",
     "ts-node": "^10.2.1",
-    "typescript": "^4.4.2"
+    "typescript": "^4.4.2",
+    "uuid": "^8.3.2"
   },
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
