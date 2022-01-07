@@ -6,15 +6,15 @@ class UserRepository {
   private UserModel = model<User>("User", UserSchema);
 
   public async findAll(): Promise<User[]> {
-    return await this.UserModel.find().exec();
+    return this.UserModel.find().exec();
   }
 
   public async findOneById(id: string): Promise<User> {
-    return await this.UserModel.findOne({ id });
+    return this.UserModel.findOne({ id });
   }
 
   public async create(user: User): Promise<User> {
-    return await this.UserModel.create(user);
+    return this.UserModel.create(user);
   }
 
   public async update(user: User): Promise<void> {
