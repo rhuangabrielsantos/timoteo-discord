@@ -9,6 +9,10 @@ class UserRepository {
     return await this.UserModel.find().exec();
   }
 
+  public async findOneById(id: string): Promise<User> {
+    return await this.UserModel.findOne({ id });
+  }
+
   public async create(user: User): Promise<User> {
     return await this.UserModel.create(user);
   }
