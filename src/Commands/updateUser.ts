@@ -1,4 +1,5 @@
 import { CommandInteractionOptionResolver, Interaction } from "discord.js";
+import moment from "moment-timezone";
 
 import Client from "../Client";
 import { Command, User } from "../Interfaces";
@@ -66,7 +67,7 @@ export const command: Command = {
       cpf: cpf || user.cpf,
       electronicSignature: electronicSignature || user.electronicSignature,
       accessPassword: accessPassword || user.accessPassword,
-      updatedAt: new Date(),
+      updatedAt: moment().tz("America/Sao_Paulo").toDate(),
     };
 
     await repository.update(newUser);

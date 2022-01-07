@@ -1,4 +1,5 @@
 import { CommandInteractionOptionResolver, Interaction } from "discord.js";
+import moment from "moment-timezone";
 
 import Client from "../Client";
 import { Command } from "../Interfaces";
@@ -52,8 +53,8 @@ export const command: Command = {
       cpf,
       electronicSignature,
       accessPassword,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: moment().tz("America/Sao_Paulo").toDate(),
+      updatedAt: moment().tz("America/Sao_Paulo").toDate(),
     });
 
     const messageHelper = new MessageHelper();
