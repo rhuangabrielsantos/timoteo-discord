@@ -5,7 +5,7 @@ import { UserSchema } from "../Schemas/UserSchema";
 class UserRepository {
   private UserModel = model<User>("User", UserSchema);
 
-  public async getAll(): Promise<User[]> {
+  public async findAll(): Promise<User[]> {
     return await this.UserModel.find().exec();
   }
 

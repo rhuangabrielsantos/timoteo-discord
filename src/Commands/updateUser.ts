@@ -1,7 +1,7 @@
 import { CommandInteractionOptionResolver, Interaction } from "discord.js";
 
 import Client from "../Client";
-import { Command } from "../Interfaces";
+import { Command, User } from "../Interfaces";
 
 import MessageHelper from "../Helpers/MessageHelper";
 
@@ -60,12 +60,13 @@ export const command: Command = {
       return { content: "Usuário não encontrado" };
     }
 
-    const newUser = {
+    const newUser = <User>{
       id,
       name: name || user.name,
       cpf: cpf || user.cpf,
       electronicSignature: electronicSignature || user.electronicSignature,
       accessPassword: accessPassword || user.accessPassword,
+      updatedAt: new Date(),
     };
 
     await repository.update(newUser);
