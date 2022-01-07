@@ -15,6 +15,8 @@ test("Given a message to createEmbedMessage method, Should create embed message"
   expectedEmbedMessage.setDescription(message.description);
   expectedEmbedMessage.setColor(message.color);
   expectedEmbedMessage.setTimestamp();
+  expectedEmbedMessage.setAuthor('Tobnit', 'https://cdn.discordapp.com/avatars/921463185335287848/ad44dec733f248fe8de6d8879ce4a5ae.png?size=256');
+  expectedEmbedMessage.setFooter("Copyright © 2022 Tobnit - Todos os direitos reservados.");
 
   expect(embedMessage).toEqual(expectedEmbedMessage);
 });
