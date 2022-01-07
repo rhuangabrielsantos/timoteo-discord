@@ -1,4 +1,4 @@
-import { CommandInteractionOptionResolver, Interaction } from "discord.js";
+import { CommandInteractionOptionResolver, GuildMemberRoleManager, Interaction } from "discord.js";
 
 import Client from "../Client";
 import { Command } from "../Interfaces";
@@ -27,6 +27,12 @@ export const command: Command = {
     interaction: Interaction,
     options: CommandInteractionOptionResolver
   ) => {
+    const memberRoles = interaction.member.roles as GuildMemberRoleManager;
+
+    if (!memberRoles.cache.has('914875483773075456')) {
+      return 'Você não possui permissão para executar este comando!';
+    }
+
     const title = options.get("title")!.value! as string;
     const description = options.get("description")!.value! as string;
 
