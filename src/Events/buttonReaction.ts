@@ -40,9 +40,10 @@ export const event: Event = {
       );
 
       const response = await generateTokenToUser(generateToken);
+      console.log(response);
 
       await interaction.update({
-        content: `Resposta do servidor para usuário **${user.name}**, do tipo **${generateToken.tokenType}**:`,
+        content: `Resposta da geração do token para usuário **${user.name}**, token do tipo **${generateToken.tokenType}**:`,
         components: [],
       });
 
