@@ -35,7 +35,7 @@ export const command: Command = {
       const embed = messageHelper.createEmbedMessage({
         author: "Dados do Usuário",
         title: `Id: ${user.id}`,
-        description: `**Nome:** ${user.name}\n**CPF:** ${user.cpf}\n**Assinatura eletrônica:** ${user.electronicSignature}\n**Senha de acesso:** ${user.accessPassword}\n**Ultima atualização:** ${updatedAtFormatted}`,
+        description: `**Nome:** ${user.name}\n**CPF:** ${user.cpf}\n**Numero da Conta:** ${user.accountNumber}\n**Assinatura eletrônica:** ${user.electronicSignature}\n**Senha de acesso:** ${user.accessPassword}\n**Ultima atualização:** ${updatedAtFormatted}`,
         color: "#0099FF",
       });
 

@@ -4,6 +4,7 @@ export interface User {
   cpf: string;
   electronicSignature: string;
   accessPassword: string;
+  accountNumber: string;
   token?: string;
 
   createdAt?: Date;

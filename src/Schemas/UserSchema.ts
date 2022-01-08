@@ -1,5 +1,5 @@
 import { Schema } from "mongoose";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 import { User } from "../Interfaces";
 
@@ -22,6 +22,10 @@ export const UserSchema = new Schema<User>({
     required: true,
   },
   accessPassword: {
+    type: String,
+    required: true,
+  },
+  accountNumber: {
     type: String,
     required: true,
   },
