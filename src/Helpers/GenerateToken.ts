@@ -21,7 +21,9 @@ export async function generateTokenToUser(
     }
   } catch (error) {
     console.log(error);
-    return error.message ? error.message : "Ocorreu um erro ao gerar o token.";
+    return error.response.data
+      ? JSON.stringify(error.response.data)
+      : error.message;
   }
 }
 
