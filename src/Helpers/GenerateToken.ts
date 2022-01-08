@@ -10,11 +10,15 @@ export async function generateTokenToUser(
   const repository = new UserRepository();
   const user = await repository.findOneById(generateToken.selectedUser);
 
-  switch (generateToken.tokenType) {
-    case "pix":
-      return await generatePixToken(user);
-    case "gateway":
-      return await generateGatewayToken(user);
+  try {
+    switch (generateToken.tokenType) {
+      case "pix":
+        return await generatePixToken(user);
+      case "gateway":
+        return await generateGatewayToken(user);
+    }
+  } catch (error) {
+    return "Ocorreu um erro ao gerar o token";
   }
 }
 
