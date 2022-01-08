@@ -7,7 +7,6 @@ import { generateComponentsToToken } from "../Helpers/ComponentsHelper";
 import { generateTokenToUser } from "../Helpers/GenerateToken";
 
 import GenerateTokenRepository from "../Repositories/GenerateTokenRepository";
-import UserRepository from "../Repositories/UserRepository";
 
 export const event: Event = {
   name: "interactionCreate",
@@ -35,17 +34,16 @@ export const event: Event = {
       await generateTokenRepository.delete(generateToken.userId);
 
       const response = await generateTokenToUser(generateToken);
-      const userRepository = new UserRepository();
-      const user = await userRepository.findOneById(generateToken.selectedUser);
 
       await interaction.update({
-        content: `Token **${generateToken.tokenType.toUpperCase()}** usuário **${
-          user.name
-        }**`,
+        content: "Resposta do servidor:",
         components: [],
       });
 
-      await interaction.reply(response);
+      await interaction.channel.send({
+        content: `\`\`\`${response}\`\`\``,
+      });
+      return;
     }
 
     if (interaction.customId === "cancel") {
@@ -55,6 +53,12 @@ export const event: Event = {
         content: `Cancelada geração do token.`,
         components: [],
       });
+      return;
     }
+
+    await interaction.update({
+      content: `Ocorreu um erro inesperado`,
+      components: [],
+    });
   },
 };

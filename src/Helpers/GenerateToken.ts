@@ -16,9 +16,12 @@ export async function generateTokenToUser(
         return await generatePixToken(user);
       case "gateway":
         return await generateGatewayToken(user);
+      default:
+        return "Tipo de token não desenvolvido.";
     }
   } catch (error) {
-    return "Ocorreu um erro ao gerar o token";
+    console.log(error);
+    return error.message ? error.message : "Ocorreu um erro ao gerar o token.";
   }
 }
 
