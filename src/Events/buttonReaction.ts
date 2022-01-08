@@ -7,6 +7,7 @@ import { generateComponentsToToken } from "../Helpers/ComponentsHelper";
 import { generateTokenToUser } from "../Helpers/GenerateToken";
 
 import GenerateTokenRepository from "../Repositories/GenerateTokenRepository";
+import UserRepository from "../Repositories/UserRepository";
 
 export const event: Event = {
   name: "interactionCreate",
@@ -34,11 +35,17 @@ export const event: Event = {
       await generateTokenRepository.delete(generateToken.userId);
 
       const response = await generateTokenToUser(generateToken);
+      const userRepository = new UserRepository();
+      const user = await userRepository.findOneById(generateToken.selectedUser);
 
       await interaction.update({
-        content: `\`\`\`${response}\`\`\``,
+        content: `Token **${generateToken.tokenType.toUpperCase()}** usuário **${
+          user.name
+        }**`,
         components: [],
       });
+
+      await interaction.reply(response);
     }
 
     if (interaction.customId === "cancel") {
