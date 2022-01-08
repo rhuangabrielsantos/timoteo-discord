@@ -39,16 +39,20 @@ export const event: Event = {
         generateToken.selectedUser
       );
 
-      const response = await generateTokenToUser(generateToken);
-
-      await interaction.channel.send({
-        content: `\`\`\`${response}\`\`\``,
-      });
-
       await interaction.update({
         content: `Resposta da geração do token para usuário **${user.name}**, token do tipo **${generateToken.tokenType}**:`,
         components: [],
       });
+
+      const interactionToken = await interaction.channel.send(
+        "**Aguardando resposta da api...**"
+      );
+
+      const response = await generateTokenToUser(generateToken);
+      await interactionToken.edit({
+        content: `\`\`\`${response}\`\`\``,
+      });
+
       return;
     }
 
