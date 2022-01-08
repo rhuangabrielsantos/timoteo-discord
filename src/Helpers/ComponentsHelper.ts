@@ -20,7 +20,7 @@ export async function generateComponentsToToken(
     options.push({
       label: user.name,
       value: user.id,
-      description: `${user.cpf} ${user.accessPassword} ${user.accountNumber}`,
+      description: `CPF: ${user.cpf} | Senha: ${user.accessPassword} | Conta:${user.accountNumber}`,
       emoji: "👤",
       default: generateToken.selectedUser === user.id,
     });

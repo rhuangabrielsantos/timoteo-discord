@@ -57,7 +57,7 @@ export async function generatePixToken(user: User) {
     }
   );
 
-  return access_token;
+  return access_token ? access_token : "Erro ao gerar token";
 }
 
 export async function generateGatewayToken(user: User) {
@@ -90,5 +90,7 @@ export async function generateGatewayToken(user: User) {
     }
   );
 
-  return responseAccount.data.access_token;
+  return responseAccount.data.access_token
+    ? responseAccount.data.access_token
+    : "Erro ao gerar token";
 }
