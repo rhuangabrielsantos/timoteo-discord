@@ -33,10 +33,10 @@ export const event: Event = {
 
       await generateTokenRepository.delete(generateToken.userId);
 
-      const token = await generateTokenToUser(generateToken);
+      const response = await generateTokenToUser(generateToken);
 
       await interaction.update({
-        content: `Token Gerado! \`\`\`${token}\`\`\``,
+        content: `\`\`\`${response}\`\`\``,
         components: [],
       });
     }
