@@ -45,7 +45,7 @@ export const event: Event = {
       });
 
       const interactionToken = await interaction.channel.send(
-        "**Aguardando resposta da api...**"
+        "<a:loading:929532652883689482>"
       );
 
       const response = await generateTokenToUser(generateToken);
