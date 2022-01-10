@@ -79,6 +79,10 @@ export async function generateGatewayToken(user: User) {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
+    auth: {
+      username: process.env.GATEWAY_USERNAME,
+      password: process.env.GATEWAY_PASSWORD,
+    },
   });
 
   const refresh_token = responseLogin.data.refresh_token;
@@ -95,6 +99,10 @@ export async function generateGatewayToken(user: User) {
     {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
+      },
+      auth: {
+        username: process.env.GATEWAY_USERNAME,
+        password: process.env.GATEWAY_PASSWORD,
       },
     }
   );
