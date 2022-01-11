@@ -27,7 +27,7 @@ export const command: Command = {
     const messageHelper = new MessageHelper();
 
     const users = await repository.findAll();
-    users.forEach(user => {
+    users.forEach(async user => {
       const updatedAtFormatted = moment(user.updatedAt).format(
         "DD/MM/YYYY HH:mm:ss"
       );
@@ -39,9 +39,9 @@ export const command: Command = {
         color: "#0099FF",
       });
 
-      embeds.push(embed);
+      await interaction.channel.send({ embeds: [embed] });
     });
 
-    return { content: "Lista de usuários", embeds };
+    return { content: "Lista de usuários" };
   },
 };
